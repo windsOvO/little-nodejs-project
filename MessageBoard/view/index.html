@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <!--
+        After browser get HTML response content, it will parse it from top to bottom.
+        if find
+            link, script, img, iframe, video, audio, etc
+        has src or href(link)( href(a) is not ) attribute will auto request
+    -->
+    <link rel="stylesheet" href="/public/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1>winds'留言板</h1>
+    <hr>
+    <a  href="post" class="btn btn-success">留言</a>
+    <hr>
+    <ul class="list-group">
+        {{each comments}}
+        <li class="list-group-item">{{$value.name}}.Say:{{$value.message}}
+            <span class="pull-right">{{$value.dateTime}}</span>
+        </li>
+        {{/each}}
+    </ul>
+</div>
+<!--<script src = '/public/js/main.js'></script>-->
+
+</body>
+</html>
