@@ -24,7 +24,7 @@ var comments = [
 http.createServer(function(req, res){
     var url = req.url;
     if (url === '/'){ //home page
-        fs.readFile('./view/index.html', function(err, data){
+        fs.readFile('./views/index.html', function(err, data){
            if (err)
                return res.end('home page 404 Not Found');
             var htmlStr = template.render(data.toString(), {
@@ -76,7 +76,7 @@ http.createServer(function(req, res){
         });
     }
     else{
-        fs.readFile('./view/404.html', function(err, data){
+        fs.readFile('./views/404.html', function(err, data){
             if (err){
                 return res.end('404.html is Not Found');
             }
